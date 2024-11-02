@@ -1,42 +1,53 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import Webcam from 'react-webcam';
 
-function CameraCard(){
-    const [hasPermission, setHasPermission] = useState(null);
-    const videoRef = useRef(null);
+const CameraCard = () => {
+  const webcamRef = useRef(null);
+  const [deviceId, setDeviceId] = useState('');
+  const [devices, setDevices] = useState([]);
+  const [switchCam, setSwitchCam] = useState(false);
 
-    const handlePermissions = async () => {
-        try{
-            const stream = await navigator.mediaDevices.getUserMedia({video: true});
-            setHasPermission(true);
-            videoRef.current.srcObject = stream;
-        } catch (error) {
-            console.error('Error accessing camera:', error);
-            setHasPermission(false);
-        }
+  useEffect(() => {
+
+    const getDevices = async () => {
+      const mediaDevices = await navigator.mediaDevices.enumerateDevices();
+      const videoDevices = mediaDevices.filter(({ kind }) => kind === 'videoinput');
+      setDevices(videoDevices);
+      if (videoDevices.length > 0) {
+        setDeviceId(videoDevices[0].deviceId);
+      }
+      if(videoDevices.length > 1){
+        setSwitchCam(true);
+      }
+      
     };
 
-    useEffect(() => {
-        handlePermissions();
-    }, []);
+    getDevices();
+  }, [2]);
 
+  const handleSwitchCamera = () => {
+    const currentIndex = devices.findIndex(device => device.deviceId === deviceId);
+    const nextIndex = (currentIndex + 1) % devices.length;
+    setDeviceId(devices[nextIndex].deviceId);
+  };
 
-    return(
-        <>
-        <div className='col-3 card'>
-            <div className='card-body'>
-                {hasPermission === null ? (
-                    <p>Requesting camera permission...</p>
-                ) : hasPermission ? (
-                    <video ref={videoRef} autoPlay playsInline />
-                ) : (
-                    <video ref={videoRef} autoPlay playsInline />
-                    //<button onClick={handlePermissions}>Allow Camera</button>
-                    
-                )}
-            </div>
-        </div>
-        </>
-    )
-}
+  return (
+    <div className='col card'>
+      <Webcam
+        audio={false}
+        ref={webcamRef}
+        videoConstraints={{ deviceId: deviceId }}
+      />
+      {switchCam ?
+        <button onClick={handleSwitchCamera}>Switch Camera</button>
+        :
+        switchCam ?
+          <button onClick={handleSwitchCamera}>Switch Camera</button>
+          :
+          <></>
+      }
+    </div>
+  );
+};
 
 export default CameraCard;

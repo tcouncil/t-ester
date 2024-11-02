@@ -1,50 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-import CameraCard from './CameraCard';
-import NavBar from './NavBar';
+import logo from "./logo.svg";
+import "./App.css";
+import CameraCard from "./CameraCard";
+import NavBar from "./NavBar";
+import Video from "./Video";
+import MultiMicrophoneVolume from "./MultiMicrophoneVolume";
+import BatteryStatus from "./BatteryStatus";
+import KeyboardTest from "./KeyboardTest";
+import WirpleBmark from "./WirpleBmark";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <NavBar />
-        <div className='row'>
-          <div className='col card'>
-            <div className='card-body'>
-            Test Video Section
+        <div className="row">
+          <div className="col card">
+            <div className="card-body">
+              <Video />
             </div>
           </div>
-          <div className='col card'>
-            <div className='card-body'>
-            Test Microphone Section
+          <div className="col card">
+            <div className="card-body">
+              <MultiMicrophoneVolume />
             </div>
           </div>
-          <div className='col card'>
-            <div className='card-body'>
-            Test Battery Section
+          <div className="col card">
+            <div className="card-body">
+              <BatteryStatus />
             </div>
           </div>
           <CameraCard />
         </div>
+        <div className="row">
+          <KeyboardTest />
+        </div>
+        <div className="row">
+          <WirpleBmark />
+          <div className="col card" ></div>
+        </div>
       </div>
-
-
-
-
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }
