@@ -34,10 +34,6 @@ function App() {
         <div className="row">
           <KeyboardTest />
         </div>
-        <div className="row">
-          <WirpleBmark />
-          <div className="col card" ></div>
-        </div>
       </div>
     </div>
   );

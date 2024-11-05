@@ -1,6 +1,6 @@
 const Video = () => {
   return (
-    <>
+    <div className="d-flex justify-content-center">
       <iframe
         src="https://www.youtube.com/embed/LDU_Txk06tM?si=Xux448Drn05IkiJr&amp;start=68"
         title="YouTube video player"
@@ -9,7 +9,7 @@ const Video = () => {
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-    </>
+    </div>
   );
 };
 

@@ -2,6 +2,49 @@
   text-align: center;
 }
 
+body{
+  background-color: #282c34 !important;
+}
+
+.title {
+  font-family: Nabla,system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "EDPT" 100,"EHLT" 12;
+  font-weight: 400;
+}
+
+.key, .keyboard {
+  box-shadow: 3px 3px #00000080;
+}
+
+.keyboard {
+  background-color: #4b5261;
+  border: solid;
+  border-color: rgba(15,14,19,.432);
+  border-radius: 5px;
+  border-width: 2px;
+  color: #fff;
+  margin-top: 16px!important;
+}
+
+.key {
+  background-color: #ec8e62;
+  border: solid;
+  border-color: hsla(0,0%,100%,.432);
+  border-radius: 5px;
+  border-width: 1px;
+  color: #410404;
+}
+
+.key-success {
+  background-color: #4e6844;
+  border: solid;
+  border-color: rgba(0,0,0,.438);
+  border-radius: 5px;
+  border-width: 1px;
+  color: #90f1b1;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

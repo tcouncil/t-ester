@@ -153,23 +153,23 @@ const KeyboardTest = () => {
   }, [pressedKeys]);
 
   return (
-    <div className="card card-body">
+    <div className="keyboard">
       {/*
       <h1 className="text-center">Keyboard Functionality Test</h1>
       <p className="text-center">Pressed Key: {pressedKeys[pressedKeys.length - 1]}</p>
       <p className="text-center">Keys Pressed: {pressedKeys.length} / {totalKeys}</p>
       
       */}
-      <p className="text-center">Percentage Working: {getPercentage()}%</p>
-      <div className="card">
+      <p className="text-center mt-3">Percentage Working: {getPercentage()}%</p>
+      <div className="">
         {rowStructure.map((row, rowIndex) => (
           <div className="row justify-content-center my-2" key={rowIndex}>
             {row.map((key) => (
               <div
                 className={`col-auto p-2 m-1 border ${
                   pressedKeys.includes(key.toUpperCase())
-                    ? "bg-success"
-                    : "bg-light"
+                    ? "key-success"
+                    : "key"
                 }`}
                 key={key}
               >
