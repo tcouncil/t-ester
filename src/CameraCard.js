@@ -16,14 +16,13 @@ const CameraCard = () => {
       if (videoDevices.length > 0) {
         setDeviceId(videoDevices[0].deviceId);
       }
-      if(videoDevices.length > 1){
+      if (videoDevices.length > 1) {
         setSwitchCam(true);
       }
-      
     };
 
     getDevices();
-  }, [2]);
+  }, []);
 
   const handleSwitchCamera = () => {
     const currentIndex = devices.findIndex(device => device.deviceId === deviceId);
@@ -41,10 +40,7 @@ const CameraCard = () => {
       {switchCam ?
         <button onClick={handleSwitchCamera}>Switch Camera</button>
         :
-        switchCam ?
-          <button onClick={handleSwitchCamera}>Switch Camera</button>
-          :
-          <></>
+        <></>
       }
     </div>
   );
