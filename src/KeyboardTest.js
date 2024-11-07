@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const keys = [
@@ -88,8 +88,7 @@ const rowStructure = [
   ["Tab", "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "[", "]", "\\"],
   ["Search", "A", "S", "D", "F", "G", "H", "J", "K", "L", ";", "'", "Enter"],
   ["ShiftLeft", "Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "ShiftRight"],
-  ["ControlLeft", "AltLeft", "Space", "AltRight", "ControlRight"],
-  ["ArrowLeft", "ArrowDown", "ArrowUp", "ArrowRight"],
+  ["ControlLeft", "AltLeft", "Space", "AltRight", "ControlRight", "ArrowLeft", "ArrowDown", "ArrowUp", "ArrowRight"],
 ];
 
 const normalizeKey = (key, code) => {
@@ -116,13 +115,13 @@ const normalizeKey = (key, code) => {
     case "ShiftRight":
       return "SHIFTRIGHT";
     case "ArrowUp":
-      return "ARROWUP";
+      return "↑";  // Up Arrow Symbol
     case "ArrowDown":
-      return "ARROWDOWN";
+      return "↓";  // Down Arrow Symbol
     case "ArrowLeft":
-      return "ARROWLEFT";
+      return "←";  // Left Arrow Symbol
     case "ArrowRight":
-      return "ARROWRIGHT";
+      return "→";  // Right Arrow Symbol
     default:
       return key.toUpperCase();
   }
@@ -130,9 +129,14 @@ const normalizeKey = (key, code) => {
 
 const KeyboardTest = () => {
   const [pressedKeys, setPressedKeys] = useState([]);
-  const [totalKeys, setTotalKeys] = useState(keys.length);
+  const [totalKeys] = useState(keys.length);
+  const divRef = useRef(null);
 
   const handleKeyPress = (event) => {
+    if (event.code === "Tab") {
+      event.preventDefault(); // Prevent default tab behavior
+    }
+
     const key = normalizeKey(event.key, event.code);
 
     if (!pressedKeys.includes(key)) {
@@ -141,10 +145,14 @@ const KeyboardTest = () => {
   };
 
   const getPercentage = () => {
-    return ((pressedKeys.length / totalKeys) * 100).toFixed(2);
+    const percentage = (pressedKeys.length / totalKeys) * 100;
+    return Math.min(percentage, 100).toFixed(2);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (divRef.current) {
+      divRef.current.focus();
+    }
     window.addEventListener("keydown", handleKeyPress);
 
     return () => {
@@ -153,13 +161,12 @@ const KeyboardTest = () => {
   }, [pressedKeys]);
 
   return (
-    <div className="keyboard">
-      {/*
-      <h1 className="text-center">Keyboard Functionality Test</h1>
-      <p className="text-center">Pressed Key: {pressedKeys[pressedKeys.length - 1]}</p>
-      <p className="text-center">Keys Pressed: {pressedKeys.length} / {totalKeys}</p>
-      
-      */}
+    <div
+      className="keyboard"
+      tabIndex="0"
+      ref={divRef}
+      style={{ outline: "none" }} // Prevent default focus outline
+    >
       <p className="text-center mt-3">Percentage Working: {getPercentage()}%</p>
       <div className="">
         {rowStructure.map((row, rowIndex) => (
@@ -167,13 +174,11 @@ const KeyboardTest = () => {
             {row.map((key) => (
               <div
                 className={`col-auto p-2 m-1 border ${
-                  pressedKeys.includes(key.toUpperCase())
-                    ? "key-success"
-                    : "key"
+                  pressedKeys.includes(normalizeKey(key, key)) ? "key-success" : "key"
                 }`}
                 key={key}
               >
-                {key}
+                {normalizeKey(key, key)}
               </div>
             ))}
           </div>
