@@ -10,24 +10,15 @@ const MultiMicrophoneVolume = () => {
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-
-    async function requestMicrophonePermission() {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        console.log('Microphone permission granted');
-        // Use the stream as needed, e.g., to create an AudioContext
-        return stream;
-      } catch (error) {
-        console.error('Microphone permission denied:', error);
-        alert('Microphone permission is required for this feature. Please enable it in your browser settings.');
-      }
-    }
-
-    requestMicrophonePermission();
-
-    
     const getMicrophoneAccess = async () => {
       try {
+        // Request microphone permission
+        const stream = await navigator.mediaDevices.getUserMedia({
+          audio: true,
+        });
+        console.log("Microphone permission granted");
+
+        // Enumerate devices after permissions are granted
         const mediaDevices = await navigator.mediaDevices.enumerateDevices();
         const audioDevices = mediaDevices.filter(
           ({ kind }) => kind === "audioinput"
@@ -37,8 +28,11 @@ const MultiMicrophoneVolume = () => {
         if (audioDevices.length > 0) {
           setSelectedDeviceId(audioDevices[0].deviceId);
         }
-      } catch (err) {
-        console.error("Error accessing microphone:", err);
+      } catch (error) {
+        console.error("Microphone permission denied or error:", error);
+        alert(
+          "Microphone permission is required for this feature. Please enable it in your browser settings."
+        );
       }
     };
 
@@ -63,14 +57,6 @@ const MultiMicrophoneVolume = () => {
           audio: { deviceId: selectedDeviceId },
         });
 
-        // Handle permission denied or error
-        if (!stream) {
-          console.error("User denied microphone access or an error occurred.");
-          alert(
-            "Microphone access is required for this feature. Please enable it in your browser settings."
-          );
-          return;
-        }
         audioContextRef.current = new (window.AudioContext ||
           window.webkitAudioContext)();
         const source = audioContextRef.current.createMediaStreamSource(stream);
