@@ -6,7 +6,8 @@ import Video from "./Video";
 import MultiMicrophoneVolume from "./MultiMicrophoneVolume";
 import BatteryStatus from "./BatteryStatus";
 import KeyboardTest from "./KeyboardTest";
-import WirpleBmark from "./WirpleBmark";
+import TouchscreenTest from "./TouchscreenTest";
+import OsInfo from "./OsInfo";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
         </div>
         <div className="row">
           <KeyboardTest />
+        </div>
+        <div className="row">
+          <TouchscreenTest />
         </div>
       </div>
     </div>

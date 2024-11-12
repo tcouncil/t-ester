@@ -2,6 +2,7 @@ const Video = () => {
   return (
     <div className="d-flex justify-content-center">
       <iframe
+        width="256"
         src="https://www.youtube.com/embed/LDU_Txk06tM?si=Xux448Drn05IkiJr&amp;start=68"
         title="YouTube video player"
         frameborder="0"
