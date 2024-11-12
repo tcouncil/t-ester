@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect } from 'react';
-import './TouchscreenTest.css';
+import React, { useState, useRef, useEffect } from "react";
+import "./TouchscreenTest.css";
 
 const numRows = 7;
 const numCols = 7;
 
 const TouchscreenTest = () => {
   const [grid, setGrid] = useState(
-    Array(numRows).fill(null).map(() => Array(numCols).fill(false))
+    Array(numRows)
+      .fill(null)
+      .map(() => Array(numCols).fill(false))
   );
   const [isFullscreen, setIsFullscreen] = useState(false);
   const containerRef = useRef(null);
@@ -40,36 +42,38 @@ const TouchscreenTest = () => {
 
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.addEventListener('touchmove', handleTouchMove);
+      containerRef.current.addEventListener("touchmove", handleTouchMove);
     }
     return () => {
       if (containerRef.current) {
-        containerRef.current.removeEventListener('touchmove', handleTouchMove);
+        containerRef.current.removeEventListener("touchmove", handleTouchMove);
       }
     };
   }, [grid]);
 
   return (
-    <div className="touchscreen-test" ref={containerRef}>
+    <>
       <button className="fullscreen-button" onClick={toggleFullscreen}>
         Touch Test
       </button>
-      {isFullscreen && (
-        <div className="grid">
-          {grid.map((row, rowIndex) =>
-            row.map((col, colIndex) => (
-              <div
-                key={`${rowIndex}-${colIndex}`}
-                data-row={rowIndex}
-                data-col={colIndex}
-                className={`cell ${col ? 'touched' : 'untouched'}`}
-                onTouchStart={() => handleTouch(rowIndex, colIndex)}
-              />
-            ))
-          )}
-        </div>
-      )}
-    </div>
+      <div className="touchscreen-test" ref={containerRef}>
+        {isFullscreen && (
+          <div className="grid">
+            {grid.map((row, rowIndex) =>
+              row.map((col, colIndex) => (
+                <div
+                  key={`${rowIndex}-${colIndex}`}
+                  data-row={rowIndex}
+                  data-col={colIndex}
+                  className={`cell ${col ? "touched" : "untouched"}`}
+                  onTouchStart={() => handleTouch(rowIndex, colIndex)}
+                />
+              ))
+            )}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
