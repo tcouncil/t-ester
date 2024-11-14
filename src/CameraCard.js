@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Webcam from "react-webcam";
+import MultiMicrophoneVolume from "./MultiMicrophoneVolume";
 
 const CameraCard = () => {
   const webcamRef = useRef(null);
@@ -40,11 +41,15 @@ const CameraCard = () => {
 
   return (
     <div className="col card">
-      <Webcam
-        audio={false}
-        ref={webcamRef}
-        videoConstraints={{ deviceId: deviceId }}
-      />
+      <div className="">
+        <Webcam
+          audio={false}
+          ref={webcamRef}
+          videoConstraints={{ deviceId: deviceId }}
+        />
+      
+      </div>
+
       {switchCam && <button onClick={handleSwitchCamera}>Switch Camera</button>}
     </div>
   );

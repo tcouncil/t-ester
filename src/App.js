@@ -3,7 +3,6 @@ import "./App.css";
 import CameraCard from "./CameraCard";
 import NavBar from "./NavBar";
 import Video from "./Video";
-import MultiMicrophoneVolume from "./MultiMicrophoneVolume";
 import BatteryStatus from "./BatteryStatus";
 import KeyboardTest from "./KeyboardTest";
 import TouchscreenTest from "./TouchscreenTest";
@@ -18,11 +17,6 @@ function App() {
           <div className="col card">
             <div className="card-body">
               <Video />
-            </div>
-          </div>
-          <div className="col card">
-            <div className="card-body">
-              <MultiMicrophoneVolume />
             </div>
           </div>
           <div className="col card">

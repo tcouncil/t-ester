@@ -84,3 +84,33 @@ Video{
     transform: rotate(360deg);
   }
 }
+
+
+.volume-meter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.volume-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.volume-meter {
+  flex: 1;
+  height: 30px;
+  background-color: #ddd;
+  border: 1px solid #000;
+  position: relative;
+}
+
+.volume-bar {
+  background-color: green;
+  position: absolute;
+  left: 0;
+}
+
+.volume-percentage {
+  font-size: 18px;
+}
