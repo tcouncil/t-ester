@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./TouchscreenTest.css";
+import touchscreentest from "./touchscreen-icon.png";
 
 const numRows = 7;
 const numCols = 7;
@@ -11,6 +12,7 @@ const TouchscreenTest = () => {
       .map(() => Array(numCols).fill(false))
   );
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isTouchTestVisible, setIsTouchTestVisible] = useState(false);
   const containerRef = useRef(null);
 
   const handleTouch = (row, col) => {
@@ -30,11 +32,15 @@ const TouchscreenTest = () => {
     }
   };
 
-  const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
+  const enterFullscreen = () => {
+    if (containerRef.current && !document.fullscreenElement) {
       containerRef.current.requestFullscreen();
       setIsFullscreen(true);
-    } else {
+    }
+  };
+
+  const exitFullscreen = () => {
+    if (document.fullscreenElement) {
       document.exitFullscreen();
       setIsFullscreen(false);
     }
@@ -51,13 +57,41 @@ const TouchscreenTest = () => {
     };
   }, [grid]);
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      exitFullscreen();
+      setIsTouchTestVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement) {
+        setIsTouchTestVisible(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
+  const startTouchTest = () => {
+    setIsTouchTestVisible(true);
+    setTimeout(enterFullscreen, 100);  // Adding a slight delay to ensure visibility first
+  };
+
   return (
     <>
-      <button className="fullscreen-button" onClick={toggleFullscreen}>
-        Touch Test
+      <button className="fullscreen-button" onClick={startTouchTest}>
+        <img src={touchscreentest} alt="Touch Test" className="button-image" />
       </button>
-      <div className="touchscreen-test" ref={containerRef}>
-        {isFullscreen && (
+      {isTouchTestVisible && (
+        <div className="touchscreen-test" ref={containerRef}>
           <div className="grid">
             {grid.map((row, rowIndex) =>
               row.map((col, colIndex) => (
@@ -71,8 +105,8 @@ const TouchscreenTest = () => {
               ))
             )}
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };

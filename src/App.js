@@ -6,23 +6,26 @@ import Video from "./Video";
 import BatteryStatus from "./BatteryStatus";
 import KeyboardTest from "./KeyboardTest";
 import TouchscreenTest from "./TouchscreenTest";
-import OsInfo from "./OsInfo";
+import VolumeIcon from "./VolumeIcon";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
         <NavBar />
-        <div className="row">
-          <div className="col card">
+        <div className="row main-tests">
+          <div className="col ">
             <div className="card-body">
               <Video />
             </div>
           </div>
-          <div className="col card">
+          <div className="col-3">
             <div className="card-body">
               <BatteryStatus />
             </div>
+          </div>
+          <div className="col-2">
+            <VolumeIcon />
           </div>
           <CameraCard />
         </div>

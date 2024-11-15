@@ -27,6 +27,7 @@ body{
   border-width: 2px;
   color: #fff;
   margin-top: 16px!important;
+  padding: 12px;
 }
 
 .key {
@@ -73,7 +74,7 @@ body{
 }
 
 Video{
-  max-width: 100%;
+  max-width: 71.84%;
 }
 
 @keyframes App-logo-spin {
@@ -85,32 +86,43 @@ Video{
   }
 }
 
+.main-tests{
+  max-height: 25vh;
+  background-color: #4b5261;
+  padding: 1%;
+  border: solid;
+  border-color: rgba(15,14,19,.432);
+  border-radius: 5px;
+  border-width: 2px;
+  color: white;
+}
 
 .volume-meter-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  padding-left: 25%;
 }
 
 .volume-icon {
-  font-size: 24px;
-  margin-right: 10px;
+  font-size: 5vw;  /* Adjust the size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.1s;  /* Smooth transition for scaling */
 }
 
-.volume-meter {
-  flex: 1;
-  height: 30px;
-  background-color: #ddd;
-  border: 1px solid #000;
-  position: relative;
+.switch-button {
+  background-color: transparent;  /* Make the background transparent */
+  border: none;                  /* Remove the border */
+  outline: none;                 /* Remove the focus outline */
+  cursor: pointer;               /* Change the cursor to a pointer to indicate it's clickable */
+  padding: 0;                    /* Remove padding if necessary */
+  font-size: 200%;            /* Ensure the font size matches the surrounding text */
+  height: 33%;
+  position: fixed;
 }
 
-.volume-bar {
-  background-color: green;
-  position: absolute;
-  left: 0;
-}
-
-.volume-percentage {
-  font-size: 18px;
+.switch-button-image {
+  width: 32px;  /* Adjust size as needed */
+  height: auto;
+  filter: invert(100%) brightness(200%);
 }

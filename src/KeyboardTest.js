@@ -162,30 +162,32 @@ const KeyboardTest = () => {
 
   return (
     <div
-      className="keyboard"
-      tabIndex="0"
-      ref={divRef}
-      style={{ outline: "none" }} // Prevent default focus outline
-    >
-      <p className="text-center mt-3">Percentage Working: {getPercentage()}%</p>
-      <div className="">
-        {rowStructure.map((row, rowIndex) => (
-          <div className="row justify-content-center my-2" key={rowIndex}>
-            {row.map((key) => (
-              <div
-                className={`col-auto p-2 m-1 border ${
-                  pressedKeys.includes(normalizeKey(key, key)) ? "key-success" : "key"
-                }`}
-                key={key}
-              >
-                {normalizeKey(key, key)}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+    className="keyboard"
+    tabIndex="0"
+    ref={divRef}
+    style={{ outline: "none" }} // Prevent default focus outline
+  >
+    <p className="text-center mt-3">Percentage Working: {getPercentage()}%</p>
+    <div className="mb-3">
+      {rowStructure.map((row, rowIndex) => (
+        <div className="row flex-grow-1 d-flex justify-content-around align-items-stretch my-0 mx-5" key={rowIndex}>
+          {row.map((key) => (
+            <div
+              className={`col p-2 m-1 border ${
+                pressedKeys.includes(normalizeKey(key, key)) ? "key-success" : "key"
+              } d-flex align-items-center justify-content-center`}
+              key={key}
+            >
+              {normalizeKey(key, key)}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
+
+
 
 export default KeyboardTest;

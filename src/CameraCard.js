@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Webcam from "react-webcam";
-import MultiMicrophoneVolume from "./MultiMicrophoneVolume";
-
+import cameraswitch from './camera-switch-icon.png'
 const CameraCard = () => {
   const webcamRef = useRef(null);
   const [deviceId, setDeviceId] = useState("");
@@ -40,17 +39,15 @@ const CameraCard = () => {
   };
 
   return (
-    <div className="col card">
-      <div className="">
+    <div className="col-3 px-0">
+      <div className="d-flex justify-content-center">
         <Webcam
           audio={false}
           ref={webcamRef}
           videoConstraints={{ deviceId: deviceId }}
         />
-      
+        {switchCam && <button className="switch-button" onClick={handleSwitchCamera}><img src={cameraswitch} alt="Camera Switch" className="switch-button-image" /></button>}
       </div>
-
-      {switchCam && <button onClick={handleSwitchCamera}>Switch Camera</button>}
     </div>
   );
 };
