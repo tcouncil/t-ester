@@ -33,11 +33,9 @@ function App() {
         <div className="row">
           <KeyboardTest />
         </div>
-        {/* BETA
         <div className="row">
           <OrientationTracker />
         </div>
-        */}
         <div className="row">
           <TouchscreenTest />
         </div>

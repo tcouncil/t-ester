@@ -1,6 +1,7 @@
 
 .App {
   text-align: center;
+  color: white;
 }
 
 body{
@@ -127,8 +128,8 @@ video{
   cursor: pointer;               /* Change the cursor to a pointer to indicate it's clickable */
   padding: 0;                    /* Remove padding if necessary */
   font-size: 200%;            /* Ensure the font size matches the surrounding text */
-  position: absolute;
-  top: 23.5%;
+  position: fixed;
+  top: 26.5%;
 }
 
 .switch-button-image {

@@ -20,6 +20,18 @@
   cursor: pointer;
 }
 
+.orientation-button {
+  position: fixed;
+  top: 10px;
+  left: -7px;
+  padding: 10px 20px;
+  z-index: 1000;
+  width: 128px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .button-image {
   width: 50px;  /* Adjust size as needed */
   height: auto;
