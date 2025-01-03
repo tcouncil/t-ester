@@ -1,7 +1,7 @@
 function NavBar(){
     return(
             <div>
-                <a class="title">T-ester</a>
+                <p class="title">T-ester</p>
             </div>
     )
 }
