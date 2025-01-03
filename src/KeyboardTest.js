@@ -137,6 +137,9 @@ const KeyboardTest = () => {
       event.preventDefault(); // Prevent default tab behavior
     }
 
+    // Filter out function keys (F1 to F12) 
+    if (event.code.startsWith("F") && !isNaN(event.code.slice(1)) && event.code.slice(1) <= 12) { return; }
+
     let key = normalizeKey(event.key, event.code);
 
     // Map `?` to `/`
