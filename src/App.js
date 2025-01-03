@@ -7,6 +7,7 @@ import BatteryStatus from "./BatteryStatus";
 import KeyboardTest from "./KeyboardTest";
 import TouchscreenTest from "./TouchscreenTest";
 import VolumeIcon from "./VolumeIcon";
+import OrientationTracker from "./OrientationTracker";
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
         <div className="row">
           <KeyboardTest />
         </div>
+        {/* BETA
+        <div className="row">
+          <OrientationTracker />
+        </div>
+        */}
         <div className="row">
           <TouchscreenTest />
         </div>
