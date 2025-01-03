@@ -39,15 +39,13 @@ const CameraCard = () => {
   };
 
   return (
-    <div className="col-3 px-0">
-      <div className="d-flex justify-content-center">
+    <div className="col flex-column video-container">
         <Webcam
           audio={false}
           ref={webcamRef}
           videoConstraints={{ deviceId: deviceId }}
         />
         {switchCam && <button className="switch-button" onClick={handleSwitchCamera}><img src={cameraswitch} alt="Camera Switch" className="switch-button-image" /></button>}
-      </div>
     </div>
   );
 };

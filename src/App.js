@@ -14,17 +14,17 @@ function App() {
       <div className="container">
         <NavBar />
         <div className="row main-tests">
-          <div className="col ">
+          <div className="col">
             <div className="card-body">
               <Video />
             </div>
           </div>
-          <div className="col-3">
+          <div className="col">
             <div className="card-body">
               <BatteryStatus />
             </div>
           </div>
-          <div className="col-2">
+          <div className="col">
             <VolumeIcon />
           </div>
           <CameraCard />
