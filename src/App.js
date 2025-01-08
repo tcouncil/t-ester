@@ -1,4 +1,5 @@
 import "./App.css";
+import { useParams } from 'react-router-dom';
 import CameraCard from "./CameraCard";
 import NavBar from "./NavBar";
 import Video from "./Video";
@@ -7,7 +8,13 @@ import KeyboardTest from "./KeyboardTest";
 import TouchscreenTest from "./TouchscreenTest";
 import VolumeIcon from "./VolumeIcon";
 
-function App() {
+function App(props) {
+  const bId = props.custom === "true" ? true : false;
+  let { id } = useParams();
+  let vId = null;
+  if(bId){
+    vId = id;
+  }
   return (
     <div className="App">
       <div className="container">
@@ -15,7 +22,7 @@ function App() {
         <div className="row main-tests">
           <div className="col">
             <div className="card-body">
-              <Video />
+              <Video videoId={vId}/>
             </div>
           </div>
           <div className="col">

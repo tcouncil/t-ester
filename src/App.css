@@ -8,6 +8,10 @@ body{
   background-color: #282c34 !important;
 }
 
+.vId{
+  color: rgb(158, 154, 154) !important;
+}
+
 .title {
   font-family: Nabla,system-ui;
   font-optical-sizing: auto;
