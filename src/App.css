@@ -19,6 +19,7 @@ body{
   font-variation-settings: "EDPT" 100,"EHLT" 12;
   font-weight: 400;
   margin: 0;
+  text-decoration: none;
 }
 
 .key, .keyboard, .main-tests {
