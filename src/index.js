@@ -9,6 +9,7 @@ import './index.css';
 import App from './App';
 import Forum from './Forum/Forum';
 import reportWebVitals from './reportWebVitals';
+import Signup from './Forum/Signup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/:id" element={<App custom="true"/>} />
         <Route path="/forum" element={<Forum />} />
+        <Route path="/register" element={<Signup />} />
       </Routes>
     </Router>
   </React.StrictMode>
