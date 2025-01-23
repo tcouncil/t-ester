@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.ea9c3bd1.css",
+    "main.css": "/static/css/main.10ea4bf1.css",
     "main.js": "/static/js/main.57705362.js",
     "static/js/453.d75ec855.chunk.js": "/static/js/453.d75ec855.chunk.js",
     "static/media/lightbulb.png": "/static/media/lightbulb.5d350c10100df6be96b9.png",
     "static/media/touchscreen-icon.png": "/static/media/touchscreen-icon.51f779f305d701c92784.png",
     "static/media/camera-switch-icon.png": "/static/media/camera-switch-icon.283c9d987d17c6231461.png",
     "index.html": "/index.html",
-    "main.ea9c3bd1.css.map": "/static/css/main.ea9c3bd1.css.map",
+    "main.10ea4bf1.css.map": "/static/css/main.10ea4bf1.css.map",
     "main.57705362.js.map": "/static/js/main.57705362.js.map",
     "453.d75ec855.chunk.js.map": "/static/js/453.d75ec855.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ea9c3bd1.css",
+    "static/css/main.10ea4bf1.css",
     "static/js/main.57705362.js"
   ]
 }
