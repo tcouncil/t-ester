@@ -44,8 +44,9 @@ const CameraCard = () => {
           audio={false}
           ref={webcamRef}
           videoConstraints={{ deviceId: deviceId }}
+          className={switchCam && "Video-Reflect"}
         />
-        {switchCam && <button className="switch-button" onClick={handleSwitchCamera}><img src={cameraswitch} alt="Camera Switch" className="switch-button-image" /></button>}
+        {switchCam && <div className="switch-button" onClick={handleSwitchCamera}><img src={cameraswitch} alt="Camera Switch" className="switch-button-image" /></div>}
     </div>
   );
 };

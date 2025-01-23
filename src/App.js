@@ -7,6 +7,8 @@ import BatteryStatus from "./BatteryStatus";
 import KeyboardTest from "./KeyboardTest";
 import TouchscreenTest from "./TouchscreenTest";
 import VolumeIcon from "./VolumeIcon";
+import MouseClicker from './MouseClicker';
+import Footer from './Footer';
 
 function App(props) {
   const bId = props.custom === "true" ? true : false;
@@ -37,6 +39,12 @@ function App(props) {
         </div>
         <div className="row">
           <KeyboardTest />
+        </div>
+        <div className="row">
+          <MouseClicker />
+        </div>
+        <div className="row">
+          <Footer />
         </div>
         <div className="row">
           <TouchscreenTest />

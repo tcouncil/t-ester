@@ -1,46 +1,47 @@
-
 .App {
   text-align: center;
   color: white;
 }
 
-body{
+body {
   background-color: #282c34 !important;
 }
 
-.vId{
-  color: rgb(158, 154, 154) !important;
+.vId {
+  color: rgba(250, 250, 250, 0.877) !important;
 }
 
 .title {
-  font-family: Nabla,system-ui;
+  font-family: Nabla, system-ui;
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings: "EDPT" 100,"EHLT" 12;
+  font-variation-settings: "EDPT" 100, "EHLT" 12;
   font-weight: 400;
   margin: 0;
   text-decoration: none;
 }
 
-.key, .keyboard, .main-tests {
+.key,
+.keyboard,
+.main-tests {
   box-shadow: 3px 3px #00000080;
 }
 
 .keyboard {
   background-color: #4b5261;
   border: solid;
-  border-color: rgba(15,14,19,.432);
+  border-color: rgba(15, 14, 19, .432);
   border-radius: 5px;
   border-width: 2px;
   color: #fff;
-  margin-top: 8px!important;
+  margin-top: 8px !important;
   padding: 6px;
 }
 
 .key {
   background-color: #ec8e62;
   border: solid;
-  border-color: hsla(0,0%,100%,.432);
+  border-color: hsla(0, 0%, 100%, .432);
   border-radius: 5px;
   border-width: 1px;
   color: #410404;
@@ -49,11 +50,12 @@ body{
 .key-success {
   background-color: #4e6844;
   border: solid;
-  border-color: rgba(0,0,0,.438);
+  border-color: rgba(0, 0, 0, .438);
   border-radius: 5px;
   border-width: 1px;
   color: #90f1b1;
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -85,18 +87,20 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.main-tests{
+.main-tests {
   background-color: #4b5261;
   border: solid;
-  border-color: rgba(15,14,19,.432);
+  border-color: rgba(15, 14, 19, .432);
   border-radius: 5px;
   border-width: 2px;
-  color: #fff;;
+  color: #fff;
+  ;
   padding: 6px;
 }
 
@@ -105,40 +109,94 @@ body{
 }
 
 .volume-icon {
-  font-size: 5vw;  /* Adjust the size as needed */
+  font-size: 5vw;
+  /* Adjust the size as needed */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  transition: transform 0.1s;  /* Smooth transition for scaling */
+  transition: transform 0.1s;
+  /* Smooth transition for scaling */
 }
 
-.video-container{
-  padding: 0; /* Remove any padding */ 
-  display: flex; /* Use flexbox to align items */ 
-  justify-content: center; /* Center the video horizontally */ 
+.video-container {
+  padding: 0;
+  /* Remove any padding */
+  display: flex;
+  /* Use flexbox to align items */
+  justify-content: center;
+  /* Center the video horizontally */
   align-items: center;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-video{
+video {
   max-width: 100%;
 }
 
 .switch-button {
-  background-color: transparent;  /* Make the background transparent */
-  border: none;                  /* Remove the border */
-  outline: none;                 /* Remove the focus outline */
-  cursor: pointer;               /* Change the cursor to a pointer to indicate it's clickable */
-  padding: 0;                    /* Remove padding if necessary */
-  font-size: 200%;            /* Ensure the font size matches the surrounding text */
-  position: fixed;
-  top: 26.5%;
+  background-color: initial;
+  border: none;
+  cursor: pointer;
+  font-size: 200%;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  transform: translateY(-48px);
 }
 
 .switch-button-image {
-  width: 32px;  /* Adjust size as needed */
-  height: auto;
   filter: invert(100%) brightness(200%);
+  height: auto;
+  width: 32px;
+}
+
+.MouseClicker {
+  bottom: 0;
+  position: fixed;
+  right: 16px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.Lightbulb {
+  width: 64px;
+}
+
+.Lightbulb-On {
+  filter: invert(100%) brightness(200%);
+  transform: translateX(2px);
+  width: 72px;
+}
+
+.Lightbulb-Off {
+  filter: invert(0) brightness(0);
+}
+
+iframe,
+video {
+  border: solid;
+  border-color: #fff0;
+  border-radius: 16px;
+  max-width: 100%;
+}
+
+iframe {
+  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(#0000), color-stop(77%, #0000), to(#ffffff80));
+}
+
+.Video-Reflect {
+  border-bottom: #000;
+
+  -webkit-box-reflect: below 0 -webkit-gradient(linear, left top, left bottom, from(#0000), color-stop(77%, #0000), to(#ffffff80));
+}
+
+.Footer {
+  color: #afaeaece;
+  font-family: Playwrite IN,serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
 }

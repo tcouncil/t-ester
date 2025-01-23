@@ -87,9 +87,9 @@ const TouchscreenTest = () => {
 
   return (
     <>
-      <button className="fullscreen-button" onClick={startTouchTest}>
+      <div className="fullscreen-button" onClick={startTouchTest}>
         <img src={touchscreentest} alt="Touch Test" className="button-image" />
-      </button>
+      </div>
       {isTouchTestVisible && (
         <div className="touchscreen-test" ref={containerRef}>
           <div className="grid">
