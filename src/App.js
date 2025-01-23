@@ -27,7 +27,7 @@ function App(props) {
               <Video videoId={vId} />
             </div>
           </div>
-          <div className="col d-flex">
+          <div className="col">
             <BatteryStatus />
           </div>
           <div className="col">

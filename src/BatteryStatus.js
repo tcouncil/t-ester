@@ -26,7 +26,12 @@ const BatteryStatus = () => {
   return (
     <>
       {/* Battery Information */}
-      <div className="col-10">
+      <div className="">
+        <div className="battery">
+          <div className={`battery-level ${charging ? 'charging' : ''} ${batteryScore <= 20 ? 'warn' : ''}`} style={{ width: `${batteryScore}%` }}></div>
+        </div>
+      </div>
+      <div className="BatteryInfo">
         <p>Battery Level: {batteryScore}%</p>
         <p>Charging: {charging ? "Yes" : "No"}</p>
         <p>
@@ -45,9 +50,9 @@ const BatteryStatus = () => {
           )}
         </p>
       </div>
-      <div className="col-2 battery">
-        <div className={`battery-level ${charging ? 'charging' : ''} ${batteryScore <= 20 ? 'warn' : ''}`} style={{ height: `${batteryScore}%` }}></div>
-      </div>
+
+
+
     </>
   );
 };

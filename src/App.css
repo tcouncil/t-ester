@@ -200,3 +200,7 @@ iframe {
   font-weight: 400;
   text-decoration: none;
 }
+
+p{
+  margin-bottom: 2px !important;
+}
