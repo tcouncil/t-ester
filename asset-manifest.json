@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.b19a6f86.css",
-    "main.js": "/static/js/main.5eb4643f.js",
-    "static/js/453.02e3ab41.chunk.js": "/static/js/453.02e3ab41.chunk.js",
+    "main.css": "/static/css/main.b794defb.css",
+    "main.js": "/static/js/main.0b36992b.js",
+    "static/js/453.d75ec855.chunk.js": "/static/js/453.d75ec855.chunk.js",
+    "static/media/lightbulb.png": "/static/media/lightbulb.5d350c10100df6be96b9.png",
     "static/media/touchscreen-icon.png": "/static/media/touchscreen-icon.51f779f305d701c92784.png",
     "static/media/camera-switch-icon.png": "/static/media/camera-switch-icon.283c9d987d17c6231461.png",
     "index.html": "/index.html",
-    "main.b19a6f86.css.map": "/static/css/main.b19a6f86.css.map",
-    "main.5eb4643f.js.map": "/static/js/main.5eb4643f.js.map",
-    "453.02e3ab41.chunk.js.map": "/static/js/453.02e3ab41.chunk.js.map"
+    "main.b794defb.css.map": "/static/css/main.b794defb.css.map",
+    "main.0b36992b.js.map": "/static/js/main.0b36992b.js.map",
+    "453.d75ec855.chunk.js.map": "/static/js/453.d75ec855.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b19a6f86.css",
-    "static/js/main.5eb4643f.js"
+    "static/css/main.b794defb.css",
+    "static/js/main.0b36992b.js"
   ]
 }
