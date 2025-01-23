@@ -13,7 +13,8 @@ const Video = (props) => {
     "https://www.youtube.com/embed/y6120QOlsfU?si=y1we_UzlgCo9tzGR&amp;start=16", // Sandstorm
     "https://www.youtube.com/embed/FtutLA63Cp8?si=g8DgpLqExEp5k2Qu", // Bad Apple
     "https://www.youtube.com/embed/1ElihbSM6ic?si=RhTrs_HfOkrMAyLS", // The Kiffness
-    "https://www.youtube.com/embed/cuxZ2u8-WXg?si=PuAtXwdrw1eDE_0_" // Venject create machines
+    "https://www.youtube.com/embed/cuxZ2u8-WXg?si=PuAtXwdrw1eDE_0_", // Venject create machines
+    "https://www.youtube.com/embed/YE7VzlLtp-4?si=xqfllripmrQXYsKj&amp;start=77" // Big Buck Bunny
   ];
 
   const handleSelect = () => {

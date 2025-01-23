@@ -14,7 +14,7 @@ function App(props) {
   const bId = props.custom === "true" ? true : false;
   let { id } = useParams();
   let vId = null;
-  if(bId){
+  if (bId) {
     vId = id;
   }
   return (
@@ -24,13 +24,11 @@ function App(props) {
         <div className="row main-tests">
           <div className="col">
             <div className="card-body">
-              <Video videoId={vId}/>
+              <Video videoId={vId} />
             </div>
           </div>
-          <div className="col">
-            <div className="card-body">
-              <BatteryStatus />
-            </div>
+          <div className="col d-flex">
+            <BatteryStatus />
           </div>
           <div className="col">
             <VolumeIcon />

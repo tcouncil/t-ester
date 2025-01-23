@@ -1,5 +1,6 @@
 import React from "react";
 import { useBattery } from "@uidotdev/usehooks";
+import "./Battery.css"
 
 const BatteryStatus = () => {
   const { loading, level, charging, chargingTime, dischargingTime } =
@@ -24,23 +25,29 @@ const BatteryStatus = () => {
 
   return (
     <>
-      <p>Battery Level: {batteryScore}%</p>
-      <p>Charging: {charging ? "Yes" : "No"}</p>
-      <p>
-        {charging && chargingTime !== Infinity ? (
-          <>
-            <p>Charging Time: {formatTime(chargingTime)}</p>
-            <p>Charge Rate: {chargeRate.toFixed(4)}% / s</p>
-          </>
-        ) : dischargingTime !== Infinity ? (
-          <>
-            <p>Discharging Time: {formatTime(dischargingTime)}</p>
-            <p>Discharge Rate: {dischargeRate.toFixed(4)}% / s</p>
-          </>
-        ) : (
-          "Calculating battery..."
-        )}
-      </p>
+      {/* Battery Information */}
+      <div className="col-10">
+        <p>Battery Level: {batteryScore}%</p>
+        <p>Charging: {charging ? "Yes" : "No"}</p>
+        <p>
+          {charging && chargingTime !== Infinity ? (
+            <>
+              <p>Charging Time: {formatTime(chargingTime)}</p>
+              <p>Charge Rate: {chargeRate.toFixed(4)}% / s</p>
+            </>
+          ) : dischargingTime !== Infinity ? (
+            <>
+              <p>Discharging Time: {formatTime(dischargingTime)}</p>
+              <p>Discharge Rate: {dischargeRate.toFixed(4)}% / s</p>
+            </>
+          ) : (
+            "Calculating battery..."
+          )}
+        </p>
+      </div>
+      <div className="col-2 battery">
+        <div className={`battery-level ${charging ? 'charging' : ''} ${batteryScore <= 20 ? 'warn' : ''}`} style={{ height: `${batteryScore}%` }}></div>
+      </div>
     </>
   );
 };

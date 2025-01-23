@@ -155,7 +155,7 @@ video {
 .MouseClicker {
   bottom: 0;
   position: fixed;
-  right: 16px;
+  right: 0px;
   -webkit-user-select: none;
   user-select: none;
 }
