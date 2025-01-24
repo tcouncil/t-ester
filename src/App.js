@@ -9,6 +9,7 @@ import TouchscreenTest from "./TouchscreenTest";
 import VolumeIcon from "./VolumeIcon";
 import MouseClicker from './MouseClicker';
 import Footer from './Footer';
+import AudioVisualizer from "./AudioVisualizer";
 
 function App(props) {
   const bId = props.custom === "true" ? true : false;
@@ -23,14 +24,13 @@ function App(props) {
         <NavBar />
         <div className="row main-tests">
           <div className="col">
-            <div className="card-body">
               <Video videoId={vId} />
-            </div>
           </div>
-          <div className="col">
+          <div className="col pt-5">
             <BatteryStatus />
           </div>
           <div className="col">
+            <AudioVisualizer />
             <VolumeIcon />
           </div>
           <CameraCard />

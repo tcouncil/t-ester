@@ -147,6 +147,11 @@ const KeyboardTest = () => {
       key = '/';
     }
 
+    // Map `"" to `'`
+    if (key === '"') {
+      key = "'";
+    }
+
     if (!pressedKeys.includes(key)) {
       setPressedKeys([...pressedKeys, key]);
     }
@@ -181,9 +186,8 @@ const KeyboardTest = () => {
           <div className="row flex-grow-1 d-flex justify-content-around align-items-stretch my-0 mx-5" key={rowIndex}>
             {row.map((key) => (
               <div
-                className={`col p-2 m-1 border ${
-                  pressedKeys.includes(normalizeKey(key, key)) ? "key-success" : "key"
-                } d-flex align-items-center justify-content-center`}
+                className={`col p-2 m-1 border ${pressedKeys.includes(normalizeKey(key, key)) ? "key-success" : "key"
+                  } d-flex align-items-center justify-content-center`}
                 key={key}
               >
                 {normalizeKey(key, key)}

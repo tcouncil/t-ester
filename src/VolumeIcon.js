@@ -51,11 +51,6 @@ const VolumeIcon = () => {
 
     return (
         <>
-            <div
-                className="volume-icon"
-                style={{ transform: `scale(${0.25 + ((volume * 2) / 100)})` }}>
-                🔊
-            </div>
             <p>Volume: {volume.toFixed(2)}%</p>
         </>
 

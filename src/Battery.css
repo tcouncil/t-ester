@@ -28,13 +28,21 @@
     right: 0;
     height: 100%;
     border-right: solid rgba(255, 255, 255, 0.247);
+
+    --s: 12px;
+    /* control the size*/
+    --c1: #6bfe58;
+    --c2: #91c346;
+
+    --_g: #0000 52%, var(--c1) 54% 57%, #0000 59%;
     background:
-        linear-gradient(135deg, #8fd885 25%, transparent 25%) -5px 0,
-        linear-gradient(225deg, #8fd885 25%, transparent 25%) -5px 0,
-        linear-gradient(315deg, #8fd885 25%, transparent 25%),
-        linear-gradient(45deg, #8fd885 25%, transparent 25%);
-    background-size: 16px 8px;
-    background-color: #58c736c4;
+        radial-gradient(farthest-side at -33.33% 50%, var(--_g)) 0 calc(var(--s)/2),
+        radial-gradient(farthest-side at 50% 133.33%, var(--_g)) calc(var(--s)/2) 0,
+        radial-gradient(farthest-side at 133.33% 50%, var(--_g)),
+        radial-gradient(farthest-side at 50% -33.33%, var(--_g)),
+        var(--c2);
+    background-size: calc(var(--s)/4.667) var(--s), var(--s) calc(var(--s)/4.667);
+
     animation: battery-level-animation 10s infinite linear;
 
     &.warn {
@@ -53,8 +61,8 @@
             content: '';
             display: inline-block;
             transform: translateY(-12px);
-            
-            
+            animation: battery-grow-animation 5s infinite linear;
+
         }
     }
 }
@@ -63,8 +71,9 @@
     0% {
         background-position: 0 0;
     }
+
     100% {
-        background-position: -100% 0; 
+        background-position: -100% 0;
     }
 }
 
@@ -72,7 +81,25 @@
     0% {
         background-position: 0 0;
     }
+
     100% {
-        background-position: 100% 0; 
+        background-position: 100% 0;
+    }
+}
+
+@keyframes battery-grow-animation {
+    0% {
+        transform: scale(1);
+        transform: translateY(-12px);
+    }
+
+    50% {
+        transform: scale(1.2);
+        transform: translateY(-14px);
+    }
+
+    100% {
+        transform: scale(1);
+        transform: translateY(-12px);
     }
 }

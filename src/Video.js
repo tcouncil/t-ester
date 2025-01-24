@@ -4,7 +4,7 @@ const Video = (props) => {
     "https://www.youtube.com/embed/EIyixC9NsLI?si=eZd9b9abxzSC5Qim", // Badger
     "https://www.youtube.com/embed/5iln6fkwJOU?si=y3dlldx57kvvOcaO", // Song that doesn't end
     "https://www.youtube.com/embed/LAxchGHx13s?si=5RDFz0PSdp498p55&amp;start=2", // Spongebob
-    "https://www.youtube.com/embed/96NUsT-1k2A?si=osNBuf8Jb0iXTxYK&amp;start=12", // Sweet Victory
+    "https://www.youtube.com/embed/96NUsT-1k2A?si=osNBuf8Jb0iXTxYK&amp;start=25", // Sweet Victory
     "https://www.youtube.com/embed/EE-xtCF3T94?si=pyu4RT8xaF9lkXni&amp;start=6", // Poke Rick Roll
     "https://www.youtube.com/embed/99LpTL8eq4o?si=heuUkBczCgc5x51G", // Song of Storms
     "https://www.youtube.com/embed/ZZ5LpwO-An4?si=6fSgK_PSLbOUOB1t", // HEYEYEYEYEYEAH
