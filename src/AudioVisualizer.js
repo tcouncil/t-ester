@@ -78,7 +78,7 @@ const AudioVisualizer = () => {
 
   return (
     <div className="audio-visualizer-container">
-      <canvas ref={canvasRef} width="auto" height="auto"></canvas>
+      <canvas ref={canvasRef} width="250%" height="auto"></canvas>
     </div>
   );
 };

@@ -29,7 +29,7 @@ function App(props) {
           <div className="col pt-5">
             <BatteryStatus />
           </div>
-          <div className="col">
+          <div className="col-3">
             <AudioVisualizer />
             <VolumeIcon />
           </div>

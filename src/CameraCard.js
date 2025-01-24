@@ -39,7 +39,7 @@ const CameraCard = () => {
   };
 
   return (
-    <div className="col flex-column video-container">
+    <div className="col flex-column video-container justify-content-start">
         <Webcam
           audio={false}
           ref={webcamRef}
