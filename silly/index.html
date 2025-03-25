@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title>metrics calc :3</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="mc">
+        <div class="row">
+            <div class="ind">
+                <h1>Intake</h1>
+                <h2 class="intake-count">(..)</h2>
+                <button class="intake-minus butt">-</button>
+                <button class="intake-plus butt">+</button>
+            </div>
+            <div class="ind">
+                <h1>Repair</h1>
+                <h2 class="repair-count">(..)</h2>
+                <button class="repair-minus butt">-</button>
+                <button class="repair-plus butt">+</button>
+            </div>
+            <div class="ind">
+                <h1>QA</h1>
+                <h2 class="qa-count">(..)</h2>
+                <button class="qa-minus butt">-</button>
+                <button class="qa-plus butt">+</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ind">
+                <h1>Points/40</h1>
+                <h2 class="points">(..)</h2>
+            </div>
+            <div class="ind">
+                <h1>% of Metrics</h1>
+                <h2 class="percent">(..)</h2>
+            </div>
+            <div class="ind">
+                <h1>Hours Worked</h1>
+                <h2 class="hours">(..)</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    //intake
+    let int_dis = document.querySelector('.intake-count');
+    let int_min = document.querySelector('.intake-minus');
+    let int_plu = document.querySelector('.intake-plus');
+
+    let int_cnt = 0;
+
+    int_min.addEventListener("click", () => {
+        int_cnt--;
+        updis();
+    });
+
+    int_plu.addEventListener("click", () => {
+        int_cnt++;
+        updis();
+    });
+
+    //repair
+    let rep_dis = document.querySelector('.repair-count');
+    let rep_min = document.querySelector('.repair-minus');
+    let rep_plu = document.querySelector('.repair-plus');
+
+    let rep_cnt = 0;
+
+    rep_min.addEventListener("click", () => {
+        rep_cnt--;
+        updis();
+    });
+
+    rep_plu.addEventListener("click", () => {
+        rep_cnt++;
+        updis();
+    });
+
+    //qa
+    let qa_dis = document.querySelector('.qa-count');
+    let qa_min = document.querySelector('.qa-minus');
+    let qa_plu = document.querySelector('.qa-plus');
+
+    let qa_cnt = 0;
+
+    qa_min.addEventListener("click", () => {
+        qa_cnt--;
+        updis();
+    });
+
+    qa_plu.addEventListener("click", () => {
+        qa_cnt++;
+        updis();
+    });
+
+    //calc displ
+    let pnts = document.querySelector('.points');
+    let percent = document.querySelector('.percent');
+    let hours = document.querySelector('.hours');
+
+    let pnt_cnt = 0;
+    let per_cnt = 0;
+    let hrs_cnt = 0;
+
+
+
+    //display update
+    function updis() {
+        int_dis.innerHTML = int_cnt;
+        rep_dis.innerHTML = rep_cnt;
+        qa_dis.innerHTML = qa_cnt;
+        pnts.innerHTML = (int_cnt * 2.5) + (rep_cnt * 4) + (qa_cnt);
+        percent.innerHTML = (int_cnt * 6.25) + (rep_cnt * 10) + (qa_cnt * 2.5);
+        hours.innerHTML = ((int_cnt * 0.5) + (rep_cnt * 0.8) + (qa_cnt * 0.2)).toFixed(1);
+    };
+
+    updis();
+</script>
+
+</html>
